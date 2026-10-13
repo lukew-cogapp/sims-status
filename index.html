@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Needs Panel Maker</title>
+<script type="module" src="/src/main.ts"></script>
+</head>
+<body>
+<div class="wrap">
+  <section class="editor">
+    <div>
+      <h1>Needs Panel Maker</h1>
+      <p class="lede">Set your Sim's needs, then save the panel as an image.</p>
+    </div>
+
+    <div>
+      <label class="label" for="name">Sim name</label>
+      <input type="text" id="name" maxlength="40">
+    </div>
+
+    <div>
+      <label class="label" for="mood">Mood (leave empty for automatic)</label>
+      <input type="text" id="mood" maxlength="40">
+    </div>
+
+    <div>
+      <span class="label">Needs (label, level, trend)</span>
+      <div class="needs" id="needs"></div>
+    </div>
+
+    <div class="row">
+      <button type="button" id="add">Add need</button>
+      <button type="button" id="random">Randomise</button>
+      <button type="button" id="reset">Reset</button>
+    </div>
+
+    <div>
+      <span class="label">Export</span>
+      <div class="row">
+        <label>Format
+          <select id="format">
+            <option value="image/png">PNG</option>
+            <option value="image/jpeg">JPEG</option>
+          </select>
+        </label>
+        <label>Size
+          <select id="scale">
+            <option value="1">1×</option>
+            <option value="2" selected>2×</option>
+            <option value="3">3×</option>
+          </select>
+        </label>
+        <button type="button" class="primary" id="download">Download</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="preview">
+    <div class="stage"><canvas id="card"></canvas></div>
+    <p class="hint">PNG keeps the rounded corners transparent. JPEG fills them with the panel colour.</p>
+  </section>
+</div>
+</body>
+</html>
